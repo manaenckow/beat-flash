@@ -56,6 +56,8 @@ class App extends Component {
             popout: null,
             modal: null,
             snackbar: null,
+            values: [],
+            disabled: false,
 
             fetchedUser: {
                 id: 1,
@@ -179,7 +181,7 @@ class App extends Component {
         const props = {setPState: this.setState.bind(this)}
         return (
             <ConfigProvider scheme={scheme} isWebView>
-                <Epic activeStory={activeStory} tabbar={activePanel !== 'onboarding' &&
+                <Epic activeStory={activeStory} tabbar={false && activePanel !== 'onboarding' &&
                 <Tabbar>
                     <TabbarItem
                         onClick={() => {
